@@ -7,14 +7,14 @@ class CategoriesController < ApplicationController
   def show
   end
 
-  def new
-    @category = Category.new
-  end
+  # def new
+  #   @category = Category.new
+  # end
 
-  def create
-    @category = Category.create(strong_params)
+  # def create
+  #   @category = Category.create(strong_params)
 
-  end
+  # end
 
   private 
   def find_category
