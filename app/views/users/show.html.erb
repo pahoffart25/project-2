@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h3><%= @user.name %></h3><img src=<%=@user.photo_url%>>
+
+
+
+<%@user.posts.each do |post|%>
+
+<h2>Post</h2>
+<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%>: <br/><br/>
+
+<%=form_for @comment do |f|%>
+<%=f.label :comment%>
+<%=f.text_field :content%>
+<%=f.submit "Comment"%>
+<%end%>
+
+<%post.comments.each do |comment|%>
+<h3>comments</h3> 
+<%=comment.user.name%>:
+<%=comment.content%><br><br>
+
+<%end%>
+<%end%>
