@@ -1,2 +1,9 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+<h1>Categories</h1>
+
+
+
+<%@categories.each do |category|%>
+<ul><%=category.name%> <br>
+<a href= <%="categories/#{category.id}"%>><img src=<%=category.photo_url%> height = "150" width = "150"></a> 
+</ul>
+<%end%>
