@@ -4,9 +4,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-  end
-
   def new
     @post = Post.new
     @categories = Category.all
@@ -14,6 +11,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(strong_params)
+    # byebug
+    redirect_to user_path(session[:user_id])
   end
 
   def edit
@@ -32,6 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   def strong_params
+    # byebug
     params.require(:post).permit(:user_id,:category_id,:content)
   end
 end

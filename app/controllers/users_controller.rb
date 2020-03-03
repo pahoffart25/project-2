@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def show
    @comment = Comment.new
   end
+  
+  
 
   def new
     @user = User.new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
-      redirect_to '/user'
+      redirect_to @user
     else
       redirect_to '/users/new'
     end
@@ -40,6 +42,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def strong_params
-    params.require(:user).permit(:name,:username,:password_digest,:bio,:photo_url)
+    params.require(:user).permit(:name, :username, :password, :password_confirmation, :bio, :photo_url)
   end
 end
