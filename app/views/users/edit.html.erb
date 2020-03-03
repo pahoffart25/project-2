@@ -1,0 +1,15 @@
+<%= form_for @user do |f|%>
+    <%=f.label :name%>:
+    <%=f.text_field :name%>
+    <br><br>
+    <%= f.label :photo%>:
+    <%= f.text_field :photo_url%>
+    <br><br>
+    <%=f.label :bio%>:
+    <%=f.text_area :bio, :cols => "50", :rows => "3"%>
+    <br><br>
+    <%= f.label :username%>:
+    <%= f.text_field :username%>
+    <br><br>
+    <%= f.submit %>
+<%end%>

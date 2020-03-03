@@ -9,6 +9,14 @@
   </head>
 
   <body>
+        <% if logged_in? %>
+        <div class="nav-logout">
+          <%= link_to 'Logout', logout_path, method: 'delete' %>
+          <%= link_to "Edit Profile", edit_user_path(session[:user_id])%>
+          <%= link_to "Categories",  categories_path%>
+          <%= link_to "Home", user_path(session[:user_id])%>
+        </div>
+        <%end%>
     <%= yield %>
   </body>
 </html>
