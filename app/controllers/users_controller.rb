@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
   before_action :find_user, only: [:show,:edit,:update,:destroy]
-  def index
-    @users = User.all 
-  end
-
+ 
   def show
    @comment = Comment.new
   end
@@ -13,14 +11,25 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(strong_params)
+    @user = User.new(strong_params)
+
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to '/user'
+    else
+      redirect_to '/users/new'
+    end
   end
+
 
   def edit
   end
 
   def update
     @user.update(strong_params)
+
+    redirect_to user_path(session[:user_id])
   end
 
   def destroy
@@ -31,6 +40,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   def strong_params
-    params.require(:user).permit(:name,:username,:password,:bio,:photo_url)
+    params.require(:user).permit(:name,:username,:password_digest,:bio,:photo_url)
   end
 end

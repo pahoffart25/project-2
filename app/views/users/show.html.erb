@@ -1,21 +1,20 @@
-<h3><%= @user.name %></h3><img src=<%=@user.photo_url%>>
+<h2><%= @user.name %></h2>
+<img src=<%=@user.photo_url%> height = "150" width = "150">
+<h2>Bio</h2>
+<h3><%=@user.bio%>
 
 
 
 <%@user.posts.each do |post|%>
 
 <h2>Post</h2>
-<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%>: <br/><br/>
+<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/>
 
-<%=form_for @comment do |f|%>
-<%=f.label :comment%>
-<%=f.text_field :content%>
-<%=f.submit "Comment"%>
-<%end%>
+
 
 <%post.comments.each do |comment|%>
 <h3>comments</h3> 
-<%=comment.user.name%>:
+<%=link_to comment.user.name, user_path(comment.user)%>:
 <%=comment.content%><br><br>
 
 <%end%>
