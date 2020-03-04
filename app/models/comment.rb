@@ -3,14 +3,19 @@ class Comment < ApplicationRecord
     belongs_to :user
 
 
-    # def self.sorted
-    #     self.all.sort {|a,b|
-    #         b.posts.count <=> a.posts.count
-    #       }
-    # end
+    def self.newest
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+    }.first
+    end
 
     def self.total_comments
         self.all.count
     end
 
+    def self.sorted
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+          }
+    end
 end

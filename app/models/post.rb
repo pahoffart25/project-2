@@ -32,5 +32,17 @@ class Post < ApplicationRecord
     }.last
     end
 
+    def self.newest
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+    }.first
+    end
+
+    def self.sorted
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+          }
+    end
+
 
 end
