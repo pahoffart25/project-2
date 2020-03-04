@@ -7,4 +7,10 @@ class Post < ApplicationRecord
     def self.total_number_of_posts
         self.all.count
     end
+
+    def self.most_liked_post
+        self.all.sort {|a,b|
+        b.likes.count <=> a.likes.count
+    }.first
+    end
 end
