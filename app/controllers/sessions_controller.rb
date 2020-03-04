@@ -5,6 +5,12 @@ class SessionsController < ApplicationController
     def welcome 
     end
 
+    def analytics
+      @users = User.total_number_of_users
+      @posts = Post.total_number_of_posts
+      @average = 
+    end
+
     def new
     end
     

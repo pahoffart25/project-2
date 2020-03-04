@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
   get '/authorized', to: 'sessions#login_required'
   get '/home', to: 'users#home'
+  get '/analytics', to: 'sessions#analytics'
   root :to =>'sessions#welcome'
   
 
