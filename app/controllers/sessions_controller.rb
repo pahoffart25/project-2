@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       @popular = Category.most_popular_category
       @comments= Comment.total_comments
       @average_comments = average_comments
+      @longest = Post.longest
     end
 
     def average_comments
