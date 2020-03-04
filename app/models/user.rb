@@ -8,5 +8,8 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: true
 
-    
+    def self.total_number_of_users
+        self.all.count
+    end
+  
 end

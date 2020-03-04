@@ -7,6 +7,9 @@ class UsersController < ApplicationController
    @like = Like.new
   end
   
+  def analytics
+    @users = User.total_number_of_users
+  end
   
 
   def new
@@ -39,9 +42,9 @@ class UsersController < ApplicationController
     @user.destroy
   end
   private 
-  def find_user 
-    @user = User.find(params[:id])
-  end
+    def find_user 
+      @user = User.find(params[:id])
+    end
   def strong_params
     params.require(:user).permit(:name, :username, :password, :password_confirmation, :bio, :photo_url)
   end
