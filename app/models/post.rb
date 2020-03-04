@@ -13,4 +13,11 @@ class Post < ApplicationRecord
         b.likes.count <=> a.likes.count
     }.first
     end
+
+    def self.longest
+        self.all.sort{|a,b|
+        b.content.length <=> a.content.length
+    }.first
+    end
+
 end
