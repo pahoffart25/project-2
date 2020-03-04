@@ -11,6 +11,14 @@
 <li><%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/></li>
 
 <button><%=link_to "Comment", new_comment_path%></button>
+
+<button> 
+    <div>Like: <%= post.likes.count %></div>
+</button>
+
+<%#= link_to "Like:", "/upvote", controller: "likes", action: "upvote", name: "post_id", post_id: post.id %>
+
+
 <h3>comments</h3>  
 <%post.comments.each do |comment|%> 
 <%=link_to comment.user.name, user_path(comment.user)%>:

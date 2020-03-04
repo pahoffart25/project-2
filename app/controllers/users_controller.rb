@@ -4,6 +4,7 @@ class UsersController < ApplicationController
  
   def show
    @comment = Comment.new
+   @like = Like.new
   end
   
   
