@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   get '/home', to: 'users#home'
   root :to =>'sessions#welcome'
   
+
   resources :users 
   resources :posts
   resources :categories, only: [:index,:show,:new,:create]
   resources :comments, only: [:create,:new,:edit,:update, :destroy]
+  # resources :likes 
+
+  # get "/upvote", to: "likes#upvote"
+
 end
 
