@@ -13,6 +13,6 @@ class Category < ApplicationRecord
             b.posts.count <=> a.posts.count
     }.first
     end
-
+    
 
 end

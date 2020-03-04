@@ -19,4 +19,10 @@ class User < ApplicationRecord
     }.first
     end
 
+    def self.least_active
+        self.all.sort {|a,b|
+            b.posts.count <=> a.posts.count
+    }.last
+    end
+
 end

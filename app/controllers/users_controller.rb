@@ -6,8 +6,6 @@ class UsersController < ApplicationController
    @comment = Comment.new
    @like = Like.new
   end
-  
-  
 
   def new
     @user = User.new
@@ -39,9 +37,9 @@ class UsersController < ApplicationController
     @user.destroy
   end
   private 
-  def find_user 
-    @user = User.find(params[:id])
-  end
+    def find_user 
+      @user = User.find(params[:id])
+    end
   def strong_params
     params.require(:user).permit(:name, :username, :password, :password_confirmation, :bio, :photo_url)
   end
