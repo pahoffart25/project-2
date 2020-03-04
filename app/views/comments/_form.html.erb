@@ -2,6 +2,6 @@
 <%=f.label :comment%>
 <%=f.text_field :content%>
 <%=f.hidden_field :user_id, :value => session[:user_id]%>
-<%=f.collection_select :post_id, @posts, :id, :content%>
+<%=f.collection_select :post_id, @posts, :id, :content%> 
 <%=f.submit "submit comment"%>
 <%end%>

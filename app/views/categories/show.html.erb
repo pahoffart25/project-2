@@ -4,6 +4,7 @@
 <%@category.posts.each do |post|%>
 <ul>
 <label><%=link_to post.user.name,  user_path(post.user)%> : <br/>
-<%=post.content%>
+<%=post.content%>  <br>
+Likes: <%=post.likes.count%>
 </ul>
 <%end%>
