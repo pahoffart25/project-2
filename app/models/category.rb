@@ -3,9 +3,16 @@ class Category < ApplicationRecord
     has_many :users, through: :posts
 
     def self.sorted
-        Category.all.sort {|a,b|
+        self.all.sort {|a,b|
             b.posts.count <=> a.posts.count
           }
     end
+
+    def self.most_popular_category
+        self.all.sort {|a,b|
+            b.posts.count <=> a.posts.count
+    }.first
+    end
+
 
 end
