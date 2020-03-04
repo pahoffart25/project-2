@@ -16,6 +16,7 @@
           <%= link_to "Edit Profile", edit_user_path(session[:user_id])%>
           <%= link_to "Categories",  categories_path%>
           <%= link_to "Logout", logout_path, method: 'delete' %>
+          <%= link_to "Analytics", analytics_path%>
         </div>
         <%end%>
     <%= yield %>

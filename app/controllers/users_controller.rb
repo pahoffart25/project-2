@@ -6,11 +6,6 @@ class UsersController < ApplicationController
    @comment = Comment.new
    @like = Like.new
   end
-  
-  def analytics
-    @users = User.total_number_of_users
-  end
-  
 
   def new
     @user = User.new
