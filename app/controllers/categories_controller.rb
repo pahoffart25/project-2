@@ -1,7 +1,9 @@
 class CategoriesController < ApplicationController
   before_action :find_category, only: [:show]
   def index
-    @categories = Category.all
+    @categories = Category.all.sort {|a,b|
+      b.posts.count <=> a.posts.count
+    }
   end
 
   def show

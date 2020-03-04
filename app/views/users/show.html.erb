@@ -10,18 +10,22 @@
 <h5>Post</h5>
 <li><%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/></li>
 
-<button><%=link_to "Comment", new_comment_path%></button>
 
-<button> 
-    <div>Like: <%= post.likes.count %></div>
-</button>
+<%= form_with url:"/comments", method: "post" do |f| %>
+<%=f.text_field :content%>
+<%=f.hidden_field :user_id, :value => session[:user_id]%>
+<%=f.hidden_field :post_id, :value => post.id%>
+<%= f.submit "Comment"%> 
+<% end %>
 
-<%#= link_to "Like:", "/upvote", controller: "likes", action: "upvote", name: "post_id", post_id: post.id %>
-
+<%= form_with url:"/upvote", method: "post" do |f| %>
+<%=f.hidden_field :post_id, :value => post.id%>
+<%= f.submit "LIKES"%> <%=post.likes.count%>
+<% end %>
 
 <h3>comments</h3>  
 <%post.comments.each do |comment|%> 
-<%=link_to comment.user.name, user_path(comment.user)%>:
+<%=link_to comment.user.name, user_path(comment.user)%>
 <%=comment.content%><br><br>
 
 <%end%>

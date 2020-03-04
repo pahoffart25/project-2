@@ -10,7 +10,7 @@
 
   <body>
         <% if logged_in? %>
-        <div class="nav">
+        <div class= "nav-bar">
           <%= link_to "Home", user_path(session[:user_id])%>
           <%= link_to "Create Post", new_post_path  %>
           <%= link_to "Edit Profile", edit_user_path(session[:user_id])%>

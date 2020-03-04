@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(strong_params)
     @posts = Post.all
-    redirect_to user_path(@comment.user)
+    redirect_to user_path(@comment.post.user)
   end
   def new
     @comment = Comment.new
@@ -25,6 +25,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
   def strong_params
-    params.require(:comment).permit(:user_id, :post_id, :content)
+    params.permit(:user_id, :post_id, :content)
   end
 end

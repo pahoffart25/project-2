@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:create,:new,:edit,:update, :destroy]
   # resources :likes 
 
-  # get "/upvote", to: "likes#upvote"
+  post "/upvote", to: "likes#create"
 
 end
 
