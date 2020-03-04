@@ -8,10 +8,20 @@ class SessionsController < ApplicationController
     def analytics
       @users = User.total_number_of_users
       @posts = Post.total_number_of_posts
-      
-
+      @fav  = Post.most_liked_post
+      @active = User.most_active
+      @least_active = User.least_active
+      @popular = Category.most_popular_category
+      @comments= Comment.total_comments
+      @average_comments = average_comments
+      @least = Post.least_liked_post
     end
-    
+
+    def average_comments
+      (@posts / @comments.to_f).round(2)   
+    end
+
+
     def new
     end
     

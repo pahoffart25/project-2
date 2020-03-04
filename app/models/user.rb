@@ -12,4 +12,17 @@ class User < ApplicationRecord
     def self.total_number_of_users
         self.all.count
     end
+
+    def self.most_active
+        self.all.sort {|a,b|
+            b.posts.count <=> a.posts.count
+    }.first
+    end
+
+    def self.least_active
+        self.all.sort {|a,b|
+            b.posts.count <=> a.posts.count
+    }.last
+    end
+
 end
