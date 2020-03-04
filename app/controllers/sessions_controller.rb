@@ -14,10 +14,10 @@ class SessionsController < ApplicationController
       @popular = Category.most_popular_category
       @comments= Comment.total_comments
       @average_comments = average_comments
-
       @least = Post.least_liked_post
-
       @longest = Post.longest
+      @last_comment = Comment.newest
+      @last_post = Post.newest
 
     end
 
