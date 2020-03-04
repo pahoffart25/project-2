@@ -12,13 +12,14 @@ class SessionsController < ApplicationController
       @active = User.most_active
       @least_active = User.least_active
       @popular = Category.most_popular_category
+      @least_popular = Category.least_popular_category
       @comments= Comment.total_comments
       @average_comments = average_comments
 
       @least = Post.least_liked_post
 
       @longest = Post.longest
-
+      @shortest = Post.shortest
     end
 
     def average_comments

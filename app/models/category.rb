@@ -14,5 +14,9 @@ class Category < ApplicationRecord
     }.first
     end
     
-
+    def self.least_popular_category
+        self.all.sort {|a,b|
+            b.posts.count <=> a.posts.count
+    }.last
+    end
 end

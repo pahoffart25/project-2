@@ -26,6 +26,11 @@ class Post < ApplicationRecord
         b.content.length <=> a.content.length
     }.first
     end
+    def self.shortest
+        self.all.sort{|a,b|
+        b.content.length <=> a.content.length
+    }.last
+    end
 
 
 end
