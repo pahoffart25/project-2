@@ -2,10 +2,12 @@ class CommentsController < ApplicationController
   before_action :find_comment, only: [:edit,:update,:destroy]
   def create
     @comment = Comment.create(strong_params)
+    @posts = Post.all
+    redirect_to user_path(@comment.user)
   end
-
   def new
     @comment = Comment.new
+    @posts = Post.all
   end
 
   def edit
