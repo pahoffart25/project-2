@@ -1,3 +1,12 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <li style="font-size: 140%; color: red">
+        <%= e %>
+        </li>
+    <% end %>
+<% end %>
+
+<br><br>
 <%=form_for @post do |f|%>
 <%=f.label :content%>
 <%=f.text_field :content%>

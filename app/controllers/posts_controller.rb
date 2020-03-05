@@ -8,8 +8,14 @@ class PostsController < ApplicationController
 
 
   def create
-    @post = Post.create(strong_params)
-    redirect_to user_path(session[:user_id])
+    @post = Post.new(strong_params)
+      if @post.valid?
+          @post.save
+          redirect_to user_path(session[:user_id])
+      else
+        flash[:errors] = @post.errors.full_messages
+        redirect_to new_post_path
+      end
   end
 
   def edit

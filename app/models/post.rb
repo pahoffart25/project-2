@@ -4,6 +4,8 @@ class Post < ApplicationRecord
     belongs_to :user
     belongs_to :category
 
+    validates :content, presence: true
+
     def self.total_number_of_posts
         self.all.count
     end

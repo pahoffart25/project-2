@@ -2,13 +2,13 @@
 <h3><%= @users%>
 <img src=<%=@user.photo_url%> height = "150" width = "150">
 <h2>Bio</h2>
-<h3><%=@user.bio%><br>
+<h3><%=@user.bio%><br><br>
 
 
-
+<h2>Posts:</h2>
 <%@user.posts.sorted.each do |post|%>
 
-<h5>Post</h5>
+<br><br>
 <%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/>
 
 
