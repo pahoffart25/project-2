@@ -26,6 +26,7 @@ class Post < ApplicationRecord
         b.content.length <=> a.content.length
     }.first
     end
+    
     def self.shortest
         self.all.sort{|a,b|
         b.content.length <=> a.content.length
@@ -36,6 +37,12 @@ class Post < ApplicationRecord
         self.all.sort {|a,b|
             b.created_at <=> a.created_at
     }.first
+    end
+
+    def self.oldest
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+    }.last
     end
 
     def self.sorted
