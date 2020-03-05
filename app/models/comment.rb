@@ -9,6 +9,12 @@ class Comment < ApplicationRecord
     }.first
     end
 
+    def self.oldest
+        self.all.sort {|a,b|
+            b.created_at <=> a.created_at
+    }.last
+    end
+
     def self.total_comments
         self.all.count
     end
