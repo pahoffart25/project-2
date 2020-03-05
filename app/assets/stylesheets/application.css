@@ -54,9 +54,20 @@ body {
     margin-left: 25%;
   }
   .buttons{
-    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
    
   }
+  form.button_to input{
+    height: 150px;
+    width: 300 px;
+    font-size: -webkit-xxx-large;
+  }
+
 
 
 
