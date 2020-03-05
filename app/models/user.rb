@@ -25,4 +25,10 @@ class User < ApplicationRecord
     }.last
     end
 
+    def self.longest_name 
+        self.all.sort {|a,b|
+        b.name.length <=> a.name.length
+    }.first
+    end
+
 end

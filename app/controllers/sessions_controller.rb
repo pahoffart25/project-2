@@ -21,9 +21,14 @@ class SessionsController < ApplicationController
       @shortest = Post.shortest
       @last_comment = Comment.newest
       @last_post = Post.newest
+
+      @longest_name = User.longest_name
+
+
       @first_comment = Comment.oldest
       @first_post = Post.oldest
       @average_likes = average_likes
+
     end
 
     def average_comments
