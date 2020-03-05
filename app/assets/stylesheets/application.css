@@ -2,8 +2,7 @@
 body {
     padding: 0;
     margin-top: 0px;
-    margin: 10;
-    background: whitesmoke;
+    background: white;
     height: 100%;
     width: 100%;
   }
@@ -13,7 +12,7 @@ body {
     margin: 0;
     padding-bottom: 5;
     overflow: hidden;
-    background-color: gray;
+    background-color: black;
   }
   
   li {
