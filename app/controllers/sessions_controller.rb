@@ -22,6 +22,7 @@ class SessionsController < ApplicationController
 
       @last_comment = Comment.newest
       @last_post = Post.newest
+      @longest_name = User.longest_name
 
     end
 
