@@ -1,36 +1,43 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav{
+    background: black;
+    border-bottom: 10px solid #37f;
+    box-shadow: 3px 0px 5px grey;
+    text-align: center;
+    padding: 1px;
+}
+
+ul li{
+    display: inline-block;
+    list-style-type: none;
+    padding: 30px 40px;
+    font-size: 24px;
+    color: white;
+    font-family: sans-serif;
+    transition: .5s;
+}
+
+ul li:hover{
+    background: #37f;
+    font-weight: bold;
+}
 
 body {
     padding: 0;
+    margin-top: 0px;
     margin: 10;
-    background: green;
+    background: whitesmoke;
     height: 100%;
     width: 100%;
   }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding-bottom: 5;
-    overflow: hidden;
-    background-color: gray;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 10px 10px;
-    text-decoration: none;
-  }
-  li {
-    border-right: 1px solid #bbb;
-  }
 
-  body.welcome{
+  
+
+body.welcome{
     background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +46,7 @@ body {
     margin: auto;
   }
 
-  html.welcome{
+html.welcome{
     background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,27 +54,34 @@ body {
     height: 100%;
     padding: 0;
     margin: auto;
-  }
-  .options-container{
+}
+.options-container{
     height: 50%;
     width: 50%;
     margin-left: 25%;
-  }
+}
   .buttons{
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%,-50%);
-   
+    transform: translate(-50%, -50%);
   }
-  form.button_to input{
-    height: 150px;
-    width: 300 px;
+
+ 
+
+  form.button_to input {
+    height: 200px;
+    width: 300px;
     font-size: -webkit-xxx-large;
   }
 
+.divider{
+    width:5px;
+    height:100px;
+    display:inline-block;
+}
 
 
 
