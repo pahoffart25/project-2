@@ -2,9 +2,9 @@
 
 
 
-<%@categories.each do |category|%>
-<ul><%=category.name%> Posts: <%=category.posts.count%> <br> 
+<%@categories.each do |category|%><br>
+<%=category.name%> Posts: <%=category.posts.count%> <br> 
 <a href= <%="categories/#{category.id}"%>><img src=<%=category.photo_url%> height = "150" width = "150"></a> 
-</ul>
+
 <%end%>
 

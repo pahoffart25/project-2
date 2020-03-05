@@ -9,7 +9,7 @@
 <%@user.posts.sorted.each do |post|%>
 
 <h5>Post</h5>
-<li><%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/></li>
+<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/>
 
 
 <%= form_with url:"/comments", method: "post" do |f| %>
@@ -24,7 +24,7 @@
 <%= f.submit "LIKES"%> <%=post.likes.count%>
 <% end %>
 
-<h3>comments</h3>  
+<h3>comments:</h3>  
 <%post.comments.sorted.each do |comment|%> 
 <%=link_to comment.user.name, user_path(comment.user)%>:
 <%=comment.content%><br><br>
