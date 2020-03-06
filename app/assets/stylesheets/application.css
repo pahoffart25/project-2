@@ -74,13 +74,11 @@ form.button_to input {
   height:100px;
   display:inline-block;
 }
-
 .category-card-container{
   display: inline-block;
   margin-left: 43%;
   padding: 20px 20px;
   width: 100vw;
-
 }
 .category-card{
   background-color: rgba(0,0,0,0.4);
@@ -90,7 +88,6 @@ form.button_to input {
   height: 225px;
   border-radius: 10%;
 }
-
 body.login{
   margin: 0;
   padding: 0;
@@ -116,7 +113,6 @@ body.login{
   padding: 0;
   color: #fff;
   text-align: center;
-
 }
 .login-box .input-box{
   position: relative;
@@ -141,6 +137,5 @@ body.login{
   transition: .5s;
 }
 .submit-box{
-  
   text-align: center;
 }
