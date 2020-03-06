@@ -6,19 +6,11 @@
 <%=flash[:errors]%><br><br>
 
 <%= form_with url: '/login' do |f| %>
-  
-<div class="text-box">
-  <%= f.label :username %>
   <%= f.text_field :username %>
-</div>
+   <%= f.label :username %>
   <br><br>
-<div class="text-box">
-  <%= f.label :password %>
   <%= f.password_field :password %>
+   <%= f.label :password %>
   <br><br>
-</div>
   <%= f.submit "Login" %>
 <% end %>
-</div>
-  </body>
-</html>
