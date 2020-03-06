@@ -1,18 +1,24 @@
+<html class="login">
+  <body class="login">
+<div class="login-box">
 <h1>Login</h1>
 
 <%=flash[:errors]%><br><br>
 
 <%= form_with url: '/login' do |f| %>
   
-
+<div class="text-box">
   <%= f.label :username %>
   <%= f.text_field :username %>
+</div>
   <br><br>
-
+<div class="text-box">
   <%= f.label :password %>
   <%= f.password_field :password %>
   <br><br>
-
+</div>
   <%= f.submit "Login" %>
-
 <% end %>
+</div>
+  </body>
+</html>
