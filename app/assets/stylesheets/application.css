@@ -1,89 +1,72 @@
 *{
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-
 .nav{
-    background: black;
-    border-bottom: 10px solid #37f;
-    box-shadow: 3px 0px 5px grey;
-    text-align: center;
-    padding: 1px;
+  background: black;
+  border-bottom: 10px solid #37f;
+  box-shadow: 3px 0px 5px grey;
+  text-align: center;
+  padding: 1px;
 }
-
 ul li{
-    display: inline-block;
-    list-style-type: none;
-    padding: 30px 40px;
-    font-size: 24px;
-    color: white;
-    font-family: sans-serif;
-    transition: .5s;
+  display: inline-block;
+  list-style-type: none;
+  padding: 30px 40px;
+  font-size: 24px;
+  color: white;
+  font-family: sans-serif;
+  transition: .5s;
 }
-
 ul li:hover{
-    background: #37f;
-    font-weight: bold;
+  background: #37f;
+  font-weight: bold;
 }
-
 body {
-    padding: 0;
-    margin-top: 0px;
-    margin: 10;
-    background: whitesmoke;
-    height: 100%;
-    width: 100%;
-  }
-
-  
-
+  padding: 0;
+  margin-top: 0px;
+  margin: 10;
+  background: whitesmoke;
+  height: 100%;
+  width: 100%;
+}
 body.welcome{
-    background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    padding: 0;
-    margin: auto;
-  }
-
+  background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 0;
+  margin: auto;
+}
 html.welcome{
-    background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: auto;
+  background-image: url(https://thumbs.gfycat.com/PettyJealousArcticfox-size_restricted.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: auto;
 }
 .options-container{
-    height: 50%;
-    width: 50%;
-    margin-left: 25%;
+  height: 50%;
+  width: 50%;
+  margin-left: 25%;
 }
-  .buttons{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
- 
-
-  form.button_to input {
-    height: 200px;
-    width: 300px;
-    font-size: -webkit-xxx-large;
-  }
-
+.buttons{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+form.button_to input {
+  height: 200px;
+  width: 300px;
+  font-size: -webkit-xxx-large;
+}
 .divider{
-    width:5px;
-    height:100px;
-    display:inline-block;
+  width:5px;
+  height:100px;
+  display:inline-block;
 }
-
-
-
- 
-

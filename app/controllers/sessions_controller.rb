@@ -51,6 +51,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
+        flash[:errors] = "Either Username or Password Invalid"
         redirect_to '/login'
       end
     end
