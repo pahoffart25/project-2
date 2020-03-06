@@ -2,6 +2,10 @@
   padding: 0px;
   margin: 0px;
 }
+li a{
+  text-decoration: none;
+  color: white;
+}
 .nav{
   background: black;
   border-bottom: 10px solid #37f;
@@ -69,4 +73,20 @@ form.button_to input {
   width:5px;
   height:100px;
   display:inline-block;
+}
+
+.category-card-container{
+  display: inline-block;
+  margin-left: 43%;
+  padding: 20px 20px;
+  width: 100vw;
+
+}
+.category-card{
+  background-color: rgba(0,0,0,0.4);
+  padding: auto;
+  text-align: center;
+  width: 250px;
+  height: 225px;
+  border-radius: 10%;
 }

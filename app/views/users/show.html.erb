@@ -1,15 +1,38 @@
 <h2><%= @user.name %></h2>
-<h3><%= @users%>
 <img src=<%=@user.photo_url%> height = "150" width = "150">
-<h2>Bio</h2>
-<h3><%=@user.bio%><br><br>
+<br><br>
+<h2>Bio:</h2>
+<h3><%=@user.bio%></h3><br><br>
+
 
 
 <h2>Posts:</h2>
+
+<% if @user.id == session[:user_id]%>
+    <%=form_with url: "/posts", method: "post" do |f|%>
+        <%=f.label :content%>
+        <%=f.text_field :content%>
+        <%=f.collection_select :category_id, @categories, :id, :name%>
+        <%= f.hidden_field :user_id, :value => session[:user_id]%>
+        <%=f.submit "create new post"%>
+    <%end%>
+<% end%>
+
+
+
+
 <%@user.posts.sorted.each do |post|%>
 
 <br><br>
-<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br/><br/>
+<%= post.content%> <label>#<%=link_to post.category.name,  category_path(post.category)%> <br><br>
+    <%if post.user_id == session[:user_id]%>
+        <%= form_with url: "/posts/#{post.id}", method: :delete do |f| %>   
+        <%= f.submit "Delete Post"%>
+    <% end %>
+<%end%>
+
+
+<br/><br/>
 
 
 <%= form_with url:"/comments", method: "post" do |f| %>
@@ -23,8 +46,9 @@
 <%=f.hidden_field :post_id, :value => post.id%>
 <%= f.submit "LIKES"%> <%=post.likes.count%>
 <% end %>
+<br>
 
-<h3>comments:</h3>  
+<h3>comments:</h3> <br> 
 <%post.comments.sorted.each do |comment|%> 
 <%=link_to comment.user.name, user_path(comment.user)%>:
 <%=comment.content%><br><br>

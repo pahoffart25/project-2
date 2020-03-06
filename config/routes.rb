@@ -18,5 +18,7 @@ Rails.application.routes.draw do
 
   post "/upvote", to: "likes#create"
 
+  # delete '/posts/destroy' , to: 'posts#destroy'
+
 end
 

@@ -1,10 +1,10 @@
 <h1>Categories</h1>
-
-
-
-<%@categories.each do |category|%><br>
-<%=category.name%> Posts: <%=category.posts.count%> <br> 
-<a href= <%="categories/#{category.id}"%>><img src=<%=category.photo_url%> height = "150" width = "150"></a> 
-
-<%end%>
-
+    <div class= 'category-card-container'>
+    <%@categories.each do |category|%><br>
+        <div class= 'category-card'>
+        <h2><%=category.name%> Posts: <%=category.posts.count%></h2>
+        <br>
+        <a href= <%="categories/#{category.id}"%>><img src=<%=category.photo_url%> height = "100" width = "100"></a> 
+        </div>
+    <%end%>
+    </div>
