@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.sorted
   end
-
+#
   def show
   end
 
