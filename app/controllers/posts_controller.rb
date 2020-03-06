@@ -27,8 +27,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
     @post.destroy
+    redirect_to user_path(session[:user_id])
   end
 
   private 
@@ -38,6 +38,6 @@ class PostsController < ApplicationController
   
   def strong_params
     # byebug
-    params.require(:post).permit(:user_id,:category_id,:content)
+    params.permit(:user_id,:category_id,:content)
   end
 end

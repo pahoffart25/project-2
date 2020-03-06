@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
    @comment = Comment.new
    @like = Like.new
+   @categories = Category.all
   end
 
   def new
@@ -33,9 +34,7 @@ class UsersController < ApplicationController
     redirect_to user_path(session[:user_id])
   end
 
-  def destroy
-    @user.destroy
-  end
+
   private 
     def find_user 
       @user = User.find(params[:id])
