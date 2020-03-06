@@ -19,8 +19,6 @@
 <% end%>
 
 
-
-
 <%@user.posts.sorted.each do |post|%>
 
 <br><br>
@@ -51,7 +49,9 @@
 <h3>comments:</h3> <br> 
 <%post.comments.sorted.each do |comment|%> 
 <%=link_to comment.user.name, user_path(comment.user)%>:
-<%=comment.content%><br><br>
+
+<%=comment.content%>
+<br><br>
 
 <%end%>
 <%end%>

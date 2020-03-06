@@ -3,8 +3,8 @@
 
 <%@category.posts.each do |post|%>
 <ul>
-<label><%=link_to post.user.name,  user_path(post.user)%> : <br/>
+<label><%=link_to post.user.name,  user_path(post.user)%>: <br/>
 <%=post.content%>  <br>
-Likes: <%=post.likes.count%>
+Likes: <%=post.likes.count%><br><br>
 </ul>
 <%end%>
