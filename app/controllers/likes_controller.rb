@@ -1,9 +1,7 @@
 class LikesController < ApplicationController
 
     def create
-        @like =Like.new(user_id: session[:user_id], post_id: strong_params[:post_id])
-        if
-
+        @like = Like.create(user_id: session[:user_id], post_id: strong_params[:post_id])
         redirect_to user_path(@like.post.user)
     end
 
